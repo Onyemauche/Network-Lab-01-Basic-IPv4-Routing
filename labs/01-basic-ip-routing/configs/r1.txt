@@ -1,0 +1,20 @@
+
+enable
+configure terminal
+hostname R1
+no ip domain-lookup
+
+interface GigabitEthernet0/0
+ description LAN_A_to_S1
+ ip address 192.168.10.1 255.255.255.0
+ no shutdown
+ exit
+
+interface GigabitEthernet0/1
+ description LAN_B_to_S2
+ ip address 192.168.20.1 255.255.255.0
+ no shutdown
+ exit
+
+end
+copy running-config startup-config
